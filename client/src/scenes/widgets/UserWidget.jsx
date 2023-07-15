@@ -13,7 +13,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const UserWidget = ({ userId, picturePath }) => {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
+  const user = useSelector((state) => state.user);
   const { palette } = useTheme();
   const navigate = useNavigate();
   const token = useSelector((state) => state.token);
@@ -29,7 +30,7 @@ const UserWidget = ({ userId, picturePath }) => {
       },
     });
     const data = await response.json();
-    setUser(data);
+    // setUser(data);
   };
 
   useEffect(() => {

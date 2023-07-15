@@ -40,9 +40,12 @@ const PostsWidget = ({ userId, isProfile = false }) => {
       getPosts();
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const reversedPosts = [...posts].reverse();
+
   return (
     <>
-      {posts.map(
+      {reversedPosts.map(
         ({
           _id,
           userId,
